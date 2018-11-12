@@ -6,11 +6,11 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 01:51:19 by dtony             #+#    #+#             */
-/*   Updated: 2018/08/14 11:29:04 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/12 13:20:41 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int		i;
 	int		ng;

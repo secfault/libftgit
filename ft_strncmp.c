@@ -6,11 +6,11 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 11:53:40 by dtony             #+#    #+#             */
-/*   Updated: 2018/08/14 11:58:31 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/12 13:33:31 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
 	unsigned int	i;
 

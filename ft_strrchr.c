@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 17:22:27 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/12 12:53:48 by dtony            ###   ########.fr       */
+/*   Created: 2018/11/12 18:53:55 by dtony             #+#    #+#             */
+/*   Updated: 2018/11/12 19:01:56 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_tolower(int c)
+#include <libft.h>
+
+char	*ft_strrchr(const char *str, int c)
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	return (c);
+	char	*ret;
+
+	if (!(ret = ft_strchr(str)) == NULL)
+		return (ft_strrchr(ret, c));
+	return (ret);
 }

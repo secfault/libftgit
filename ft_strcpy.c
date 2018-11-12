@@ -6,11 +6,11 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 02:02:35 by dtony             #+#    #+#             */
-/*   Updated: 2018/08/09 10:41:39 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/12 13:30:36 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	int		i;
 

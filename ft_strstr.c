@@ -6,11 +6,11 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 11:56:38 by dtony             #+#    #+#             */
-/*   Updated: 2018/08/15 10:11:30 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/12 13:35:57 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strstr(const char *str, const char *to_find)
 {
 	int		i;
 	int		j;

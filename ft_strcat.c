@@ -6,21 +6,13 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 22:22:38 by dtony             #+#    #+#             */
-/*   Updated: 2018/08/13 22:29:09 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/12 13:29:43 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
-{
-	int		i;
+#include <libft.h>
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	int		i;
 	int		size;
