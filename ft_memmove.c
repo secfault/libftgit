@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 13:53:56 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/12 14:01:02 by dtony            ###   ########.fr       */
+/*   Created: 2018/11/15 11:52:43 by dtony             #+#    #+#             */
+/*   Updated: 2018/11/15 11:52:43 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(int c)
+#include "libft.h"
+
+void    *ft_memmove(void *dest, const void *src, size_t len)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+    if (src > dest)
+        return (ft_memcpy(dest, src, len));
+    if (src < dest)
+        return (ft_memcpy_rev(dest, src, len));
+    return (0);
 }

@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 10:58:19 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/06 12:18:18 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/15 09:52:20 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+#include "libft.h"
+
+size_t		ft_strlen(const char *str)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (str[i])

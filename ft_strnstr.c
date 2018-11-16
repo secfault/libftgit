@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/09 11:56:38 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/12 13:35:57 by dtony            ###   ########.fr       */
+/*   Created: 2018/11/13 17:34:02 by dtony             #+#    #+#             */
+/*   Updated: 2018/11/13 17:34:02 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(const char *str, const char *to_find)
-{
-	int		i;
-	int		j;
+#include "libft.h"
 
-	i = 0;
-	j = 0;
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+{
+    size_t	i;
+	size_t	j;
+
 	if (to_find[0] == '\0')
 		return (str);
+    i = ft_strlen(to_find);
 	while (str[i])
 	{
 		j = 0;
 		while (str[i + j] == to_find[j])
 		{
-			if (to_find[j + 1] == '\0')
+			if (to_find[j + 1] == '\0' && i + j == len)
 				return (str + i);
 			j++;
 		}
