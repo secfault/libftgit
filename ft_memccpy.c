@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 16:32:58 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/21 16:32:58 by dtony            ###   ########.fr       */
+/*   Created: 2018/11/23 12:04:08 by dtony             #+#    #+#             */
+/*   Updated: 2018/11/23 12:04:08 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strnew(size_t size)
+void    *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
+    char    *destcpy;
+    char    *srccpy;
     size_t  i;
-    char    *str;
 
+    if (n == 0 || dest == src)
+        return (dest);
+    destcpy = (char *)dest;
+    srccpy = (char *)src;
     i = 0;
-    if (!(str = (char *)malloc((size + 1) * sizeof(char))))
+    while (i <= n && srccpy[i] != c)
     {
-        return (NULL);
-    }
-    while (!(i > size))
-    {
-        str[i] = '\0';
+        destcpy[i] = srccpy[i];
         i++;
     }
-    str[i] = '\0';
-    return (str);
+    return (dest);
 }

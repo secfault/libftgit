@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 16:32:58 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/21 16:32:58 by dtony            ###   ########.fr       */
+/*   Created: 2018/11/27 20:48:00 by dtony             #+#    #+#             */
+/*   Updated: 2018/11/27 20:48:00 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char    *ft_strnew(size_t size)
+char    *ft_strtrim(char const *s)
 {
-    size_t  i;
-    char    *str;
+    int     i;
+    int     j;
+    char    *trim;
 
     i = 0;
-    if (!(str = (char *)malloc((size + 1) * sizeof(char))))
-    {
+    j = 0;
+    if (!(trim = (char *)malloc(sizeof(*s) + sizeof(char))))
         return (NULL);
-    }
-    while (!(i > size))
+    while (s[i] < 33 && s[i] == ',' && s[i])
+        i++;
+    while (s[i])
     {
-        str[i] = '\0';
+        trim[j] = s[i];
         i++;
     }
-    str[i] = '\0';
-    return (str);
+    while (trim[j] < 33 && trim[j] == ',')
+        j--;
+    free(trim + (j + 1));
+    ft_strclr(trim + (j + 1));
+    return (trim);
 }

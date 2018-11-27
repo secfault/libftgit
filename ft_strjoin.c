@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 16:32:58 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/21 16:32:58 by dtony            ###   ########.fr       */
+/*   Created: 2018/11/27 20:26:31 by dtony             #+#    #+#             */
+/*   Updated: 2018/11/27 20:26:31 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-char    *ft_strnew(size_t size)
+char    *ft_strjoin(char const *s1, char const *s2)
 {
-    size_t  i;
-    char    *str;
+    int     i;
+    char    *ret;
 
-    i = 0;
-    if (!(str = (char *)malloc((size + 1) * sizeof(char))))
-    {
+    i = -1;
+    if (!(ret = (char *)malloc(sizeof(*s1) + sizeof(*s2) + sizeof(char))))
         return (NULL);
-    }
-    while (!(i > size))
-    {
-        str[i] = '\0';
-        i++;
-    }
-    str[i] = '\0';
-    return (str);
+    while (s1[++i])
+        ret[i] = s1[i];
+        i = -1;
+    while (s2[++i])
+        ret[i + sizeof(*s1)] = s2[i];
+    ret[i + sizeof(*s1)] = '\0';
+    return (ret);
 }

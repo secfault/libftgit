@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 16:32:58 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/21 16:32:58 by dtony            ###   ########.fr       */
+/*   Created: 2018/11/23 13:49:25 by dtony             #+#    #+#             */
+/*   Updated: 2018/11/23 13:49:25 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
+#include <stdlib.h>
 
-char    *ft_strnew(size_t size)
+char    *ft_strsub(char const *s, unsigned int start, size_t len)
 {
     size_t  i;
-    char    *str;
+    size_t  l;
+    char    *ret;
 
     i = 0;
-    if (!(str = (char *)malloc((size + 1) * sizeof(char))))
-    {
+    l = len - (size_t)start;
+    if (!(ret = (char *)malloc(sizeof(char) * l + 1)))
         return (NULL);
-    }
-    while (!(i > size))
+    while (!(i > l))
     {
-        str[i] = '\0';
+        ret[i] = s[(size_t)start + i];
         i++;
     }
-    str[i] = '\0';
-    return (str);
+    ret[i] = '\0';
+    return (ret);
 }
