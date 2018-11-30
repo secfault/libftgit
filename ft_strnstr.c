@@ -6,7 +6,7 @@
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 17:34:02 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/13 17:34:02 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/30 21:33:21 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-    size_t	i;
+	size_t	i;
 	size_t	j;
 
 	if (to_find[0] == '\0')

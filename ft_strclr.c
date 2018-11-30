@@ -6,15 +6,15 @@
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 17:22:51 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/21 17:22:51 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/30 21:43:57 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_strclr(char *s)
+void	ft_strclr(char *s)
 {
-    int i;
+	int	i;
 
-    i = -1;
-    while (s[++i])
-        s[i] = '\0';
+	i = -1;
+	while (s[++i])
+		s[i] = '\0';
 }

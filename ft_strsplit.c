@@ -6,11 +6,11 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 16:22:53 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/30 16:23:16 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/30 21:58:06 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int		is_whitespace(char s, char c)
 {

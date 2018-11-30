@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 13:12:51 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/30 16:22:21 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/30 21:14:10 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
 
 void    *ft_memset(void *str, int c, size_t n);
 void    ft_bzero(void *s, size_t n);

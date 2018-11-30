@@ -6,24 +6,24 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 12:51:03 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/30 13:25:22 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/30 21:59:25 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_lenght_int(int nb)
+int		ft_lenght_int(int nb)
 {
-    int lenght;
+	int	lenght;
 
 	lenght = 0;
-    while (nb)
-    {
-        nb = nb / 10;
-        lenght++;
-    }
-    return (lenght);
+	while (nb)
+	{
+		nb = nb / 10;
+		lenght++;
+	}
+	return (lenght);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		i;
 	int		ng;

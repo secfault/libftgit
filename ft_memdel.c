@@ -6,22 +6,22 @@
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 11:51:05 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/21 11:51:05 by dtony            ###   ########.fr       */
+/*   Updated: 2018/11/30 21:40:29 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_memdel(void **ap)
+void	ft_memdel(void **ap)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (ap[i])
-    {
-        free(ap[i]);
-        i++;
-    }
-    free(ap);
-    ap = NULL;
+	i = 0;
+	while (ap[i])
+	{
+		free(ap[i]);
+		i++;
+	}
+	free(ap);
+	ap = NULL;
 }
