@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memdel2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 10:58:19 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/03 15:52:37 by dtony            ###   ########.fr       */
+/*   Created: 2018/12/03 20:43:47 by dtony             #+#    #+#             */
+/*   Updated: 2018/12/03 20:44:48 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+void	ft_memdel(void **ap)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (ap[i])
+	{
+		free(ap[i]);
 		i++;
-	return (i);
+	}
+	free(ap);
+	ap = NULL;
 }

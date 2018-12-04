@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnew2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 10:58:19 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/03 15:52:37 by dtony            ###   ########.fr       */
+/*   Created: 2018/12/03 21:44:24 by dtony             #+#    #+#             */
+/*   Updated: 2018/12/03 21:45:28 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+char	*ft_strnew(size_t size)
 {
 	size_t	i;
+	char	*str;
 
 	i = 0;
-	while (str[i])
+	if (!(str = (char *)malloc((size + 1) * sizeof(char))))
+		return (NULL);
+	while (!(i > size))
+	{
+		str[i] = '\0';
 		i++;
-	return (i);
+	}
+	str[i] = '\0';
+	return (str);
 }

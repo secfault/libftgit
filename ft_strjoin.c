@@ -6,7 +6,7 @@
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 20:26:31 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/30 21:55:14 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/03 15:49:21 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char		*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	while (s1[++i])
 		ret[i] = s1[i];
-		i = -1;
+	i = -1;
 	while (s2[++i])
 		ret[i + sizeof(*s1)] = s2[i];
 	ret[i + sizeof(*s1)] = '\0';

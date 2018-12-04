@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 10:58:19 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/03 15:52:37 by dtony            ###   ########.fr       */
+/*   Created: 2018/12/03 20:52:41 by dtony             #+#    #+#             */
+/*   Updated: 2018/12/03 20:54:01 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t		ft_strlen(const char *str)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (str[i])
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] < s2[i])
+			return (-1);
+		if (s1[i] > s2[i])
+			return (1);
 		i++;
-	return (i);
+	}
+	return (0);
 }

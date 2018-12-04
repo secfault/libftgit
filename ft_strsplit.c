@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 16:22:53 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/30 21:58:06 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/03 14:38:02 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,14 @@ char	**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	raw = 0;
-	words_tab = ft_alloy(i, str, c);
-	while (str[i])
+	words_tab = ft_alloy(i, (char *)s, c);
+	while (s[i])
 	{
-		if (!(is_whitespace(str[i], c)))
+		if (!(is_whitespace(s[i], c)))
 		{
 			col = 0;
-			while (!(is_whitespace(str[i], c)) && str[i])
-				words_tab[raw][col++] = str[i++];
+			while (!(is_whitespace(s[i], c)) && s[i])
+				words_tab[raw][col++] = s[i++];
 			words_tab[raw][col] = '\0';
 			raw++;
 		}

@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 10:58:19 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/03 15:52:37 by dtony            ###   ########.fr       */
+/*   Created: 2018/12/03 18:21:40 by dtony             #+#    #+#             */
+/*   Updated: 2018/12/03 22:25:35 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+void	*ft_memalloc(size_t size)
 {
 	size_t	i;
+	int		*tab;
 
 	i = 0;
-	while (str[i])
+	if (!(tab = (int *)malloc((size + 1) * sizeof(int))))
+	{
+		return (NULL);
+	}
+	while (!(i < size))
+	{
+		tab[i] = 0;
 		i++;
-	return (i);
+	}
+	tab[i] = 0;
+	return (tab);
 }

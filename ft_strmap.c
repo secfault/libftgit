@@ -6,7 +6,7 @@
 /*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 12:29:47 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/30 21:47:14 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/03 15:51:39 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 char		*ft_strmap(char const *s, char (*f)(char))
 {
-	int     i;
-	char    *map;
+	int		i;
+	char	*map;
 
 	i = -1;
 	while (s[++i])
 	{
-		if (!(map[i] = (char)malloc(sizeof(f(s[i])))));
-			 return (NULL);
+		if (!(map[i] = (char)malloc(sizeof(f(s[i])))))
+			return (NULL);
 		map[i] = f(s[i]);
 	}
-	if (!(map[i] = (char)malloc(sizeof(char))));
+	if (!(map[i] = (char)malloc(sizeof(char))))
 		return (NULL);
 	map[i] = '\0';
 	return (map);

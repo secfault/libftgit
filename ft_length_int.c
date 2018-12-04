@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_length_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 10:58:19 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/03 15:52:37 by dtony            ###   ########.fr       */
+/*   Created: 2018/12/03 14:47:33 by dtony             #+#    #+#             */
+/*   Updated: 2018/12/03 22:45:52 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t		ft_strlen(const char *str)
+int		ft_itoa_sizer(int nb)
 {
-	size_t	i;
+	int	length;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	length = 0;
+	if (nb < 0)
+	{
+		nb = -nb;
+		length++;
+	}
+	while (nb)
+	{
+		nb = nb / 10;
+		length++;
+	}
+	length++;
+	return (length);
 }
