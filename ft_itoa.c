@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 12:51:03 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/03 14:51:58 by dtony            ###   ########.fr       */
+/*   Created: 2018/12/04 17:50:50 by dtony             #+#    #+#             */
+/*   Updated: 2018/12/04 17:50:53 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,23 @@ char	*ft_itoa(int n)
 	int		ln;
 	char	*itoa;
 
-	i = 0;
-	ng = 1;
-	ln = ft_length_int(n);
+	i = -1;
+	ng = 0;
+	ln = ft_itoa_sizer(n);
 	if (n < 0)
 	{
-		n = -n;
-		ng = 2;
-	}
-	if (!(itoa = (char *)malloc(sizeof(char) * (ln + ng))))
-		return (NULL);
-	itoa[ln + ng - 1] = '\0';
-	if (ng == 2)
-	{
-		itoa[i] = '-';
 		ng = 1;
-		i++;
+		n = -n;
 	}
+	if (!(str = (char *)malloc(sizeof(char) * ln)))
+		return (NULL);
+	if (ng == 1)
+		itoa[++i] = '-';
 	while (n)
 	{
 		n /= 10;
-		itoa[i] = n % 10 + '0';
-		i++;
+		itoa[++i] = n % 10 + '0';
 	}
+	itoa[ln + ng - 1] = '\0';
 	return (itoa);
 }

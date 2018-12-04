@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dtony <dtony@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 11:46:38 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/30 21:39:26 by dtony            ###   ########.fr       */
+/*   Created: 2018/12/04 17:50:04 by dtony             #+#    #+#             */
+/*   Updated: 2018/12/04 17:50:06 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memalloc(size_t size)
 	{
 		return (NULL);
 	}
-	while(!(i < size))
+	while (!(i < size))
 	{
 		tab[i] = 0;
 		i++;
