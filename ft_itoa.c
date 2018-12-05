@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 17:50:50 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/05 11:17:56 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/05 20:29:48 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,24 @@ char	*ft_itoa(int n)
 {
 	int		i;
 	int		ng;
-	int		ln;
 	char	*itoa;
 
 	i = -1;
 	ng = 0;
-	ln = ft_itoa_sizer(n);
 	if (n < 0)
 	{
 		ng = 1;
 		n = -n;
 	}
-	if (!(itoa = (char *)malloc(sizeof(char) * ln)))
+	if (!(itoa = (char *)malloc(sizeof(char) * (ft_itoa_sizer(n) + 1))))
 		return (NULL);
 	if (ng == 1)
 		itoa[++i] = '-';
-	while (n)
+	while ((size_t)++i < ft_strlen(itoa))
 	{
+		itoa[i] = n % 10 + '0';
 		n /= 10;
-		itoa[++i] = n % 10 + '0';
 	}
-	itoa[ln + ng - 1] = '\0';
+	itoa[++i] = '\0';
 	return (itoa);
 }

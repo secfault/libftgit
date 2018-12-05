@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 10:37:43 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/05 10:37:45 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/05 13:13:49 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 void	ft_memdel(void **ap)
 {
-	size_t	i;
-
-	i = 0;
-	while (ap[i])
+	if (ap && *ap)
 	{
-		free(ap[i]);
-		i++;
+		free(*ap);
+		*ap = NULL;
 	}
-	free(ap);
-	ap = NULL;
 }

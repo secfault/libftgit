@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 10:41:24 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/05 10:41:26 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/05 13:15:50 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 void	ft_strdel(char **as)
 {
-	size_t i;
-
-	i = 0;
-	while (as[i])
+	if (as && *as)
 	{
-		free(as[i]);
-		i++;
+		free(*as);
+		*as = NULL;
 	}
-	free(as);
-	as = NULL;
 }

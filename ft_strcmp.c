@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 10:40:51 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/05 10:40:52 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/05 12:38:03 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int		ft_strcmp(const char *s1, const char *s2)
 	int	i;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0')
+	while (s1[i] && s2[i])
 	{
 		if (s1[i] < s2[i])
 			return (-1);
@@ -23,5 +23,5 @@ int		ft_strcmp(const char *s1, const char *s2)
 			return (1);
 		i++;
 	}
-	return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
