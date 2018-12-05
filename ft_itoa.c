@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 17:50:50 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/04 17:50:53 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/05 11:17:56 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_itoa(int n)
 		ng = 1;
 		n = -n;
 	}
-	if (!(str = (char *)malloc(sizeof(char) * ln)))
+	if (!(itoa = (char *)malloc(sizeof(char) * ln)))
 		return (NULL);
 	if (ng == 1)
 		itoa[++i] = '-';

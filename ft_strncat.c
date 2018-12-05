@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/13 22:30:12 by dtony             #+#    #+#             */
-/*   Updated: 2018/11/12 13:32:38 by dtony            ###   ########.fr       */
+/*   Created: 2018/12/05 11:08:45 by dtony             #+#    #+#             */
+/*   Updated: 2018/12/05 11:10:53 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	size_t		i;
-	size_t		size;
+	size_t	i;
+	size_t	size;
 
 	i = 0;
 	size = ft_strlen(dest);
