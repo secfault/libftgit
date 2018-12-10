@@ -6,7 +6,7 @@
 #    By: dtony <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/30 17:59:25 by dtony             #+#    #+#              #
-#    Updated: 2018/12/05 18:51:33 by dtony            ###   ########.fr        #
+#    Updated: 2018/12/10 19:49:39 by dtony            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -71,7 +71,8 @@ SRC		=	ft_memset.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		ft_itoa_sizer.c
+		ft_itoa_sizer.c \
+		ft_trim_sizer.c
 
 RM		=	rm -f
 

@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 17:50:50 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/08 14:48:27 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/10 18:51:56 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,23 @@
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	int		ng;
-	char	*itoa;
+	int				i;
+	unsigned int	nb;
+	char			*itoa;
 
-	ng = 0;
-	if (n < 0)
-	{
-		ng = 1;
-		n = -n;
-	}
-	if (!(itoa = (char *)malloc(sizeof(char) * (ft_itoa_sizer(n) + 1))))
+	i = ft_itoa_sizer(n) - 1;
+	nb = (n < 0) ? (unsigned int)-n : (unsigned int)n;
+	if (!(itoa = (char *)malloc(sizeof(char) * ft_itoa_sizer(n))))
 		return (NULL);
-	if (ng == 1)
+	itoa[i] = '\0';
+	if (nb == 0)
+		itoa[i - 1] = '0';
+	if (n < 0)
 		itoa[0] = '-';
-	i = (ng == 1) ? ft_itoa_sizer(n) + 1 : ft_itoa_sizer(n);
-	itoa[i + 1] = '\0';
-	while (n)
+	while (nb)
 	{
-		itoa[i] = n % 10 + '0';
-		n /= 10;
+		itoa[--i] = nb % 10 + '0';
+		nb /= 10;
 	}
 	return (itoa);
 }

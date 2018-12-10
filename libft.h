@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 13:12:51 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/03 22:37:50 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/10 19:47:05 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,7 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_itoa_sizer(int nb);
+int		ft_trim_sizer(char const *s);
+int		ft_is_trim(char const s);
 
 #endif
