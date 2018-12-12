@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/05 10:40:05 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/12 15:52:10 by dtony            ###   ########.fr       */
+/*   Created: 2018/12/11 15:14:02 by dtony             #+#    #+#             */
+/*   Updated: 2018/12/11 17:05:32 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	unsigned char	*str;
-	size_t			i;
+	t_list	*new;
 
-	str = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	if (!(new = malloc(sizeof(t_list))))
+		return (NULL);
+	if (content == NULL)
 	{
-		if (str[i] == (unsigned char)c)
-			return (str + i);
-		i++;
+		new->content = NULL;
+		new->content_size = 0;
 	}
-	return (NULL);
+	else
+	{
+		new->content = ft_strdup((char *)content);
+		new->content_size = content_size;
+	}
+	new->next = NULL;
+	return (new);
 }

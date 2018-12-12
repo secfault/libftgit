@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 11:16:44 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/10 21:22:27 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/12 19:18:27 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,23 @@ char		*ft_strtrim(char const *s)
 	int		j;
 	char	*trim;
 
-	i = 0;
-	j = 0;
-	if (!(trim = (char *)malloc((ft_trim_sizer(s) + 1)
-				* sizeof(char))))
-		return (NULL);
-	while (ft_is_trim(s[i]) && s[i])
-		i++;
-	while (j < ft_trim_sizer(s))
+	if (s)
 	{
-		trim[j] = s[i];
-		i++;
-		j++;
+		i = 0;
+		j = 0;
+		if (!(trim = (char *)malloc((ft_trim_sizer(s) + 1)
+					* sizeof(char))))
+			return (NULL);
+		while (ft_is_trim(s[i]) && s[i])
+			i++;
+		while (j < ft_trim_sizer(s))
+		{
+			trim[j] = s[i];
+			i++;
+			j++;
+		}
+		trim[j] = '\0';
+		return (trim);
 	}
-	trim[j] = '\0';
-	return (trim);
+	return (NULL);
 }

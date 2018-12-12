@@ -6,7 +6,7 @@
 #    By: dtony <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/30 17:59:25 by dtony             #+#    #+#              #
-#    Updated: 2018/12/10 19:49:39 by dtony            ###   ########.fr        #
+#    Updated: 2018/12/12 14:52:21 by dtony            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -72,14 +72,21 @@ SRC		=	ft_memset.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_itoa_sizer.c \
-		ft_trim_sizer.c
+		ft_is_trim.c \
+		ft_trim_sizer.c \
+		ft_lstnew.c \
+		ft_lstdelone.c \
+		ft_lstdel.c \
+		ft_lstadd.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 RM		=	rm -f
 
 all:		$(NAME)
 
 $(NAME):
-	$(CC) -c $(SRC)
+	$(CC) $(CFLAGS) -c $(SRC)
 	ar rs $(NAME) *.o
 	ranlib $(NAME)
 

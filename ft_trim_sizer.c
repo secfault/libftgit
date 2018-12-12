@@ -6,16 +6,11 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 19:30:01 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/10 21:25:26 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/12 14:50:50 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_trim(char const s)
-{
-	if (s == '\n' || s == ' ' || s == '\t')
-		return (1);
-	return (0);
-}
+#include "libft.h"
 
 int		ft_trim_sizer(char const *s)
 {

@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 10:07:02 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/05 12:03:23 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/12 17:58:00 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (str1[i - 1] - str2[i - 1]);
+	return (0);
 }

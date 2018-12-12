@@ -6,15 +6,14 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 10:35:23 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/05 10:35:24 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/12 18:16:33 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_strclr(char *s)
 {
-	int i;
-
-	i = -1;
-	while (s[++i])
-		s[i] = '\0';
+	if (s)
+		ft_bzero(s, ft_strlen(s));
 }

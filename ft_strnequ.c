@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 11:12:08 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/05 18:24:27 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/12 19:09:26 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	if (ft_strncmp(s1, s2, n) == 0)
+	if (s1 && s2 && ft_strncmp(s1, s2, n) == 0)
 		return (1);
 	return (0);
 }

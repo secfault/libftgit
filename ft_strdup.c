@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 10:42:36 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/05 10:42:37 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/12 16:46:09 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *src)
 	char	*cpy;
 
 	i = -1;
-	if (!(cpy = malloc(sizeof(*cpy) * ft_strlen(src))))
+	if (!(cpy = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1))))
 		return (0);
 	while (src[++i])
 		cpy[i] = src[i];

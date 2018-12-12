@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_is_trim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/05 10:40:05 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/12 15:52:10 by dtony            ###   ########.fr       */
+/*   Created: 2018/12/12 14:49:20 by dtony             #+#    #+#             */
+/*   Updated: 2018/12/12 14:54:01 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_is_trim(char const s)
 {
-	unsigned char	*str;
-	size_t			i;
-
-	str = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		if (str[i] == (unsigned char)c)
-			return (str + i);
-		i++;
-	}
-	return (NULL);
+	if (s == '\n' || s == ' ' || s == '\t')
+		return (1);
+	return (0);
 }

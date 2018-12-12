@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 17:50:04 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/05 13:03:16 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/12 16:13:31 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memalloc(size_t size)
 	int		*tab;
 
 	i = 0;
-	if (!(tab = (int *)malloc((size + 1) * sizeof(int))))
+	if (!(tab = (int *)malloc(size)))
 		return (NULL);
 	while (!(i > size))
 	{
