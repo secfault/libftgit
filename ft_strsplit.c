@@ -6,7 +6,7 @@
 /*   By: dtony <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 16:22:53 by dtony             #+#    #+#             */
-/*   Updated: 2018/12/12 19:17:26 by dtony            ###   ########.fr       */
+/*   Updated: 2018/12/12 20:03:10 by dtony            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,33 +68,40 @@ static char		**ft_alloy(int i, char *str, char c)
 	return (tab);
 }
 
-char			**ft_strsplit(char const *s, char c)
+static char		**ft_fill_tab(char **tab, char const *s, char c)
 {
 	int		i;
 	int		col;
 	int		raw;
+
+	i = 0;
+	raw = 0;
+	while (s[i])
+	{
+		if (!(is_whitespace(s[i], c)))
+		{
+			col = 0;
+			while (!(is_whitespace(s[i], c)) && s[i])
+				tab[raw][col++] = s[i++];
+			tab[raw][col] = '\0';
+			raw++;
+		}
+		else
+			i++;
+	}
+	tab[raw] = NULL;
+	return (tab);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
 	char	**words_tab;
 
 	if (s)
 	{
-		i = 0;
-		raw = 0;
-		if (!(words_tab = ft_alloy(i, (char *)s, c)))
+		if (!(words_tab = ft_alloy(0, (char *)s, c)))
 			return (NULL);
-		while (s[i])
-		{
-			if (!(is_whitespace(s[i], c)))
-			{
-				col = 0;
-				while (!(is_whitespace(s[i], c)) && s[i])
-					words_tab[raw][col++] = s[i++];
-				words_tab[raw][col] = '\0';
-				raw++;
-			}
-			else
-				i++;
-		}
-		words_tab[raw] = NULL;
+		words_tab = ft_fill_tab(words_tab, s, c);
 		return (words_tab);
 	}
 	return (NULL);
